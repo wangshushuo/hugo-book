@@ -73,6 +73,17 @@
 
 {{ define "main" }}
   <article class="markdown">
+    {{ $title := "" }}
+    {{ if .Title }}
+      {{ $title = .Title }}
+    {{ else if and .IsSection .File }}
+      {{ $title = path.Base .File.Dir | humanize | title }}
+    {{ else if and .IsPage .File }}
+      {{ $title = .File.BaseFileName | humanize | title }}
+    {{ end }}
+    <h1>{{$title}}</h1>
+    <p>作者：{{.Params.author}}</p>
+    <hr/>
     {{- .Content -}}
   </article>
 {{ end }}
