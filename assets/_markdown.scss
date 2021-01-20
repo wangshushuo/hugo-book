@@ -13,6 +13,17 @@
     line-height: 1em;
     margin-top: 1.5em;
     margin-bottom: $padding-16;
+    font-weight: bolder;
+  }
+  h2::after{
+    content: "##";
+    color: #c5c5c5;
+    font-size: 1em;
+  }
+  h3::after{
+    content: "###";
+    color: #c5c5c5;
+    font-size: 0.8em;
   }
 
   h4, h5, h6 {
@@ -44,6 +55,7 @@
 
   img {
     max-width: 100%;
+    border: 1px solid #c5c5c5;
   }
 
   code {
